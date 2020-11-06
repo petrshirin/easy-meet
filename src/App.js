@@ -4,8 +4,8 @@ import View from '@vkontakte/vkui/dist/components/View/View';
 import ScreenSpinner from '@vkontakte/vkui/dist/components/ScreenSpinner/ScreenSpinner';
 import '@vkontakte/vkui/dist/vkui.css';
 
-import Home from './panels/Home';
-import Persik from './panels/Persik';
+import Home from './panels/Home/Home';
+import Persik from './panels/Persik/Persik';
 
 const App = () => {
 	const [activePanel, setActivePanel] = useState('home');
@@ -22,8 +22,8 @@ const App = () => {
 		});
 		async function fetchData() {
 			// Получение текущего пользователя, закоментил для девовского приложения
-			// const user = await bridge.send('VKWebAppGetUserInfo');
-			// setUser(user);
+			const user = await bridge.send('VKWebAppGetUserInfo');
+			setUser(user);
 			setPopout(null);
 		}
 		fetchData();
