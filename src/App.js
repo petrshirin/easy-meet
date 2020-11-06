@@ -4,14 +4,15 @@ import View from '@vkontakte/vkui/dist/components/View/View';
 import ScreenSpinner from '@vkontakte/vkui/dist/components/ScreenSpinner/ScreenSpinner';
 import '@vkontakte/vkui/dist/vkui.css';
 
-import Events from './panels/Events/Events'
+import Events from './panels/Events/Events';
+import Event from './panels/Event/Event';
 import Home from './panels/Home/Home';
 import Persik from './panels/Persik/Persik';
 import ToolBar from './components/toolbar/toolbar'
 import { Div } from '@vkontakte/vkui';
 
 const App = () => {
-	const [activePanel, setActivePanel] = useState('Events');
+	const [activePanel, setActivePanel] = useState('events');
 	const [fetchedUser, setUser] = useState(null);
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
 
@@ -19,7 +20,7 @@ const App = () => {
 		bridge.subscribe(({ detail: { type, data }}) => {
 			if (type === 'VKWebAppUpdateConfig') {
 				const schemeAttribute = document.createAttribute('scheme');
-				schemeAttribute.value = data.scheme ? data.scheme : 'client_light';
+				schemeAttribute.value = 'client_light';
 				document.body.attributes.setNamedItem(schemeAttribute);
 			}
 		});
@@ -33,16 +34,16 @@ const App = () => {
 	}, []);
 
 	const go = e => {
-		console.log(e)
 		setActivePanel(e.currentTarget.dataset.to);
 	};
 
 	return (
 		<div>
 			<View activePanel={activePanel} popout={popout}>
-			<Events id='events' fetchedUser={fetchedUser} go={go}/>
+				<Events id='events' fetchedUser={fetchedUser} go={go}/>
 				<Home id='home' fetchedUser={fetchedUser} go={go} />
 				<Persik id='persik' go={go} />
+				<Event id='event' fetchedUser={fetchedUser} go={go} />
 			</View>
 			<ToolBar activeWin={activePanel} go={go}/>
 		</div>

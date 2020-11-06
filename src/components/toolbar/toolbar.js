@@ -12,32 +12,13 @@ import Icon24HelpOutline from '@vkontakte/icons/dist/24/help_outline';
 import Icon28UserOutline from '@vkontakte/icons/dist/28/user_outline';
 
 const ToolBar = ({ activeWin, go }) => (
-    // <FixedLayout vertical="bottom">
-    //     <table>
-    //         <td align="center">
-    //         <Cell
-    //             before={activeWin === "home" ? <Icon28Users3Outline fill="#eb1e23"/> : <Icon28Users3Outline fill="#000"/>}
-    //             onClick={go} 
-    //             data-to="home"
-    //         />
-    //         </td>
-    //         <td>
-    //         <Cell
-    //             before={activeWin === "persik" ? <Icon28SafariOutline fill="#eb1e23"/> : <Icon28SafariOutline fill="#000"/>}
-    //             onClick={go} 
-    //             data-to="persik"
-    //         />
-    //         </td>
-    //     </table>
-    // </FixedLayout>
-
     <Epic activeStory={activeWin} tabbar={
         <Tabbar>
           <TabbarItem
             onClick={go}
-            data-to="home"
-            selected={activeWin === 'home'}
-          >{activeWin === 'home' ? <Icon28Users3Outline fill="#eb1e23"/> : <Icon28Users3Outline fill="#000"/>}</TabbarItem>
+            data-to="events"
+            selected={activeWin === 'events'}
+          >{(activeWin === 'events' || activeWin === 'event') ? <Icon28Users3Outline fill="#eb1e23"/> : <Icon28Users3Outline fill="#000"/>}</TabbarItem>
           <TabbarItem
             onClick={go}
             selected={activeWin === 'persik'}
