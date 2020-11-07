@@ -1,0 +1,35 @@
+
+.bar {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+}
+
+.bar div {
+    white-space: nowrap;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-family: Roboto;
+}
+
+.centerHeader div {
+    text-align-last: center;
+    font-size: small;
+}
+
+.centerHeader span{
+    font-family: Roboto;
+    font-size: medium;
+}
+
+.UsersStack {
+    align-items: center;
+    justify-content: center;
+}
+
+.UsersStack__text {
+    flex: none;
+}
