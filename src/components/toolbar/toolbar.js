@@ -13,30 +13,32 @@ import Icon28UserOutline from '@vkontakte/icons/dist/28/user_outline';
 
 const ToolBar = ({ activeWin, go }) => (
     <Epic activeStory={activeWin} tabbar={
-        <Tabbar>
-          <TabbarItem
+    <Tabbar>
+        <TabbarItem
             onClick={go}
             data-to="events"
             selected={activeWin === 'events'}
-          >{(activeWin === 'events' || activeWin === 'event') ? <Icon28Users3Outline fill="#eb1e23"/> : <Icon28Users3Outline fill="#000"/>}</TabbarItem>
-          <TabbarItem
+        >{(activeWin === 'events' || activeWin === 'event') ? <Icon28Users3Outline fill="#eb1e23"/> :
+            <Icon28Users3Outline fill="#000"/>}</TabbarItem>
+        <TabbarItem
             onClick={go}
             selected={activeWin === 'persik'}
             data-to="persik"
-          >{activeWin === 'persik' ? <Icon28SafariOutline fill="#eb1e23"/> : <Icon28SafariOutline fill="#000"/>}</TabbarItem>
-          <TabbarItem
+        >{activeWin === 'persik' ? <Icon28SafariOutline fill="#eb1e23"/> :
+            <Icon28SafariOutline fill="#000"/>}</TabbarItem>
+        <TabbarItem
             onClick={go}
             selected={activeWin === 'home'}
             data-to="home"
-          >{activeWin === 'home' ? <Icon24HelpOutline fill="#eb1e23"/> : <Icon24HelpOutline fill="#000"/>}</TabbarItem>
-          <TabbarItem
+        >{activeWin === 'home' ? <Icon24HelpOutline fill="#eb1e23"/> : <Icon24HelpOutline fill="#000"/>}</TabbarItem>
+        <TabbarItem
             onClick={go}
             selected={activeWin === 'persik'}
             data-to="persik"
-          >{activeWin === 'persik' ? <Icon28UserOutline fill="#eb1e23"/> : <Icon28UserOutline fill="#000"/>}</TabbarItem>
-        </Tabbar>
-        
-      }></Epic>
+        >{activeWin === 'persik' ? <Icon28UserOutline fill="#eb1e23"/> : <Icon28UserOutline fill="#000"/>}</TabbarItem>
+    </Tabbar>
+
+}/>
 );
 
 ToolBar.props = {

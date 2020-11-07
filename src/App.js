@@ -6,16 +6,22 @@ import '@vkontakte/vkui/dist/vkui.css';
 
 import Events from './panels/Events/Events';
 import Event from './panels/Event/Event';
-import {authorizeUser} from './requests'
+import {BACKEND_URL} from './requests'
 import Home from './panels/Home/Home';
 import Persik from './panels/Persik/Persik';
 import ToolBar from './components/toolbar/toolbar'
 import { Div } from '@vkontakte/vkui';
+import {login} from "./redux/actions";
+import {useDispatch} from "react-redux";
+import axios from "axios";
+import {USER_DATA_STORAGE_KEY} from "./redux/reducers/store";
 
 const App = () => {
 	const [activePanel, setActivePanel] = useState('events');
-	const [fetchedUser, setUser] = useState(null);
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
+	const [fetchedUser, serUser] = useState(null);
+
+	const dispatch = useDispatch()
 
 	useEffect(() => {
 		bridge.subscribe(({ detail: { type, data }}) => {
@@ -28,18 +34,45 @@ const App = () => {
 		async function fetchData() {
 			// Получение текущего пользователя, закоментил для девовского приложения
 			const user = await bridge.send('VKWebAppGetUserInfo')
-			setUser(user)
+			let dataToBackEnd = {
+				first_name: user.first_name,
+				second_name: user.last_name,
+				avatar: user.photo_200,
+
+			}
+			let userToken = JSON.parse(localStorage.getItem(USER_DATA_STORAGE_KEY));
+			console.log(userToken)
+			await axios.post(`${BACKEND_URL}/user/info/update/`,
+				dataToBackEnd, {
+					headers: {
+						'Authorization': `Token ${userToken.token}`,
+						'Content-Type': 'application/json;charset=utf-8'
+					}
+				}
+			).then((resp) => {
+				if (resp.status === 201) {
+				}
+			});
+
 			setPopout(null)
 		}
 
 		async function getUserToken() {
-			const response = authorizeUser()
-			if (response.errors) {
-
-			}
+			const queryParams = document.location.search
+			await axios.post(`${BACKEND_URL}/user/auth/`,
+				{"url": queryParams},
+				{
+					'Content-Type': 'application/json;charset=utf-8'
+				}
+			).then((resp) => {
+				if (resp.status === 201) {
+					dispatch(login(resp.data.data))
+					fetchData()
+				}
+			});
 		}
+
 		getUserToken()
-		fetchData()
 	}, [])
 
 	const go = e => {
