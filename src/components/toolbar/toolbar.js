@@ -21,9 +21,9 @@ const ToolBar = ({ activeWin, go }) => (
           >{(activeWin === 'events' || activeWin === 'event' || activeWin === 'createEvent') ? <Icon28Users3Outline fill="#eb1e23"/> : <Icon28Users3Outline fill="#000"/>}</TabbarItem>
           <TabbarItem
             onClick={go}
-            selected={activeWin === 'persik'}
-            data-to="persik"
-          >{activeWin === 'persik' ? <Icon28SafariOutline fill="#eb1e23"/> : <Icon28SafariOutline fill="#000"/>}</TabbarItem>
+            selected={activeWin === 'map'}
+            data-to="map"
+          >{(activeWin === 'map' || activeWin === 'mapProfile') ? <Icon28SafariOutline fill="#eb1e23"/> : <Icon28SafariOutline fill="#000"/>}</TabbarItem>
           <TabbarItem
             onClick={go}
             selected={activeWin === 'home'}

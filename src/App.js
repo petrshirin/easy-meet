@@ -9,6 +9,8 @@ import Event from './panels/Event/Event';
 import Home from './panels/Home/Home';
 import Persik from './panels/Persik/Persik';
 import ToolBar from './components/toolbar/toolbar'
+import MapMeet from './panels/map/map';
+import MapProfile from './panels/MapProfile/MapProfile';
 import { Div } from '@vkontakte/vkui';
 import CreateEvent from './panels/create_event/create_event';
 
@@ -46,6 +48,8 @@ const App = () => {
 				<Persik id='persik' go={go} />
 				<Event id='event' fetchedUser={fetchedUser} go={go} />
 				<CreateEvent id='createEvent' fetchedUser={fetchedUser} go={go} />
+				<MapMeet id='map'go={go}/>
+				<MapProfile id='mapProfile' go={go} fetchedUser={fetchedUser}/>
 			</View>
 			<ToolBar activeWin={activePanel} go={go}/>
 		</div>
