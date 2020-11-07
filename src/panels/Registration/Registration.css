@@ -1,0 +1,36 @@
+.name {
+    font-size: 18px;
+    margin-left: 10%;
+    text-align: center;
+}
+
+.ava {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+}
+
+.cb {
+    flex-direction: row;
+    justify-content: center;
+}
+
+.ico {
+    position: fixed;
+    top: 85%;
+    left: 85%;
+    width: 50px;
+    height: 50px;
+    z-index: 10;
+  }
+
+.aue {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.aue button{
+background-color: #8a00ee;
+}

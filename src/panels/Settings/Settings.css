@@ -1,0 +1,32 @@
+.name {
+    font-size: 16px;
+    margin-right: 10%;
+}
+.rating {
+    font-size: 64px;
+}
+
+.ava {
+    margin-top: 6%;
+    margin-left: 1%;
+}
+
+.ico {
+    position: fixed;
+    top: 85%;
+    left: 85%;
+    width: 50px;
+    height: 50px;
+    z-index: 10;
+  }
+
+.aue {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.aue button{
+background-color: #8a00ee;
+}

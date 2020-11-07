@@ -13,9 +13,12 @@ import { Div } from '@vkontakte/vkui';
 import Questions from './panels/Questions/Questions';
 import Vopros from './panels/Vopros/Vopros';
 import Tolking from './panels/Tolking/Tolking';
+import YourPage from './panels/YourPage/YourPage';
+import Settings from './panels/Settings/Settings';
+import Registration from './panels/Registration/Registration';
 
 const App = () => {
-	const [activePanel, setActivePanel] = useState('home');
+	const [activePanel, setActivePanel] = useState('registration');
 	const [fetchedUser, setUser] = useState(null);
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
 
@@ -49,6 +52,9 @@ const App = () => {
 				<Vopros id='vopros' fetchedUser={fetchedUser} go={go}/>
 				<Home id='home' fetchedUser={fetchedUser} go={go} />
 				<Tolking id='tolking' fetchedUser={fetchedUser} go={go} />
+				<YourPage id='yourpage' fetchedUser={fetchedUser} go={go} />
+				<Settings id='settings' fetchedUser={fetchedUser} go={go} />
+				<Registration id='registration' fetchedUser={fetchedUser} go={go} />
 				<Persik id='persik' go={go} />
 			</View>
 			<ToolBar activeWin={activePanel} go={go}/>

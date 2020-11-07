@@ -9,7 +9,7 @@ import Div from '@vkontakte/vkui/dist/components/Div/Div';
 import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
 import ToolBar from '../../components/toolbar/toolbar'
 
-const Events = ({ id, go, fetchedUser}) => (
+const Home = ({ id, go, fetchedUser}) => (
     <Panel id={id}>
         <PanelHeader>EasyMeet</PanelHeader>
         {fetchedUser &&
@@ -23,4 +23,4 @@ const Events = ({ id, go, fetchedUser}) => (
     </Panel>
 );
 
-export default Events; 
+export default Home; 
