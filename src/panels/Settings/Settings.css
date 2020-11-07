@@ -1,9 +1,11 @@
 .name {
     font-size: 16px;
     margin-right: 10%;
+    font-family: 'Roboto', sans-serif;
 }
 .rating {
     font-size: 64px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .ava {
@@ -22,11 +24,12 @@
 
 .aue {
     margin-top: 40px;
+    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
     flex-direction: row;
 }
 
 .aue button{
-background-color: #8a00ee;
+    background-color: #8a00ee;
 }

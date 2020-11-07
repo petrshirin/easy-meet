@@ -16,9 +16,11 @@ import Tolking from './panels/Tolking/Tolking';
 import YourPage from './panels/YourPage/YourPage';
 import Settings from './panels/Settings/Settings';
 import Registration from './panels/Registration/Registration';
+import Tutorial1 from './panels/tutorial1/tutorial1';
+
 
 const App = () => {
-	const [activePanel, setActivePanel] = useState('registration');
+	const [activePanel, setActivePanel] = useState('tutorial1');
 	const [fetchedUser, setUser] = useState(null);
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
 
@@ -55,6 +57,7 @@ const App = () => {
 				<YourPage id='yourpage' fetchedUser={fetchedUser} go={go} />
 				<Settings id='settings' fetchedUser={fetchedUser} go={go} />
 				<Registration id='registration' fetchedUser={fetchedUser} go={go} />
+				<Tutorial1 id='tutorial1' fetchedUser={fetchedUser} go={go} />
 				<Persik id='persik' go={go} />
 			</View>
 			<ToolBar activeWin={activePanel} go={go}/>

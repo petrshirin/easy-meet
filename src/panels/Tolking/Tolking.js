@@ -18,10 +18,12 @@ const Tolking = ({ id, go, fetchedUser }) => (
 	<Panel id={id}>
 		<PanelHeader>EasyMeet</PanelHeader>
 		<SelectTool></SelectTool>
+		<div className = "aux">
 		<Answer head = "ya lomal steklo?" ans = "4" but = {<Button onClick={go} data-to="vopros">Перейти</Button>}></Answer>
 		<Answer head = "kak shekolad v ruke"  ans = "5" but = {<Button onClick={go} data-to="vopros">Перейти</Button>}></Answer>
 		<Answer head = "ya rezal eti palci" ans = "6" but = {<Button onClick={go} data-to="vopros">Перейти</Button>}></Answer>
 		<Answer head = "za to 4to oni" ans = '1' but = {<Button onClick={go} data-to="vopros">Перейти</Button>} ></Answer>
+		</div>
 		<div className = "ico">
 			<Icon28AddCircleOutline fill='#8a00ee' onClick={go} data-to="questions" width = {50} height = {50}/> 
 		</div>

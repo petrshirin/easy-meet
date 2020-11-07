@@ -24,10 +24,10 @@ import { useState, useEffect, useRef, Fragment } from 'react';
 const Vopros = ({ id, go, fetchedUser }) => (
 	<Panel id={id}>
 		<PanelHeader>Вопрос</PanelHeader>
-            <div>
+            <div className = "tex">
                 <text>Автор</text>
             </div>
-            <div>
+            <div className = "auttex">
                 <text>Вопрос такой то</text>
             </div>
           <Group>

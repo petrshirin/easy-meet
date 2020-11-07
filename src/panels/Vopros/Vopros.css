@@ -28,3 +28,21 @@
     height: 50px;
     z-index: 10;
     }
+
+.tex {
+    font-family: 'Roboto', sans-serif;
+    margin-left: 5%;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.auttex {
+    font-family: 'Roboto', sans-serif;
+    margin-left: 5%;
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.bl {
+    margin-left: 5%;
+}

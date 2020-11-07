@@ -13,13 +13,16 @@ import Icon24HelpOutline from '@vkontakte/icons/dist/24/help_outline';
 import Icon28UserOutline from '@vkontakte/icons/dist/28/user_outline';
 import { Banner } from '@vkontakte/vkui';
 import Button from '@vkontakte/vkui/dist/components/Button/Button';
+import './textbanner.css';
 import Icon20MessageOutline from '@vkontakte/icons/dist/20/message_outline';
 
 
 const BannerText = ({answ}) => (
-    <div>
-        <text><Icon20MessageOutline fill='#8a00ee'/></text> 
-        <text>{"Количество ответов - " + answ}</text>
+    <div className = "cont">
+        <div className = "bo">
+        <div><text><Icon20MessageOutline fill='#8a00ee'/></text></div> 
+        <div><text>{"Количество ответов - " + answ}</text></div>
+    </div>
     </div>
 );
 
