@@ -10,7 +10,11 @@ import {BACKEND_URL} from './requests'
 import Home from './panels/Home/Home';
 import Persik from './panels/Persik/Persik';
 import ToolBar from './components/toolbar/toolbar'
+import SelectTool from './components/selecttool/selecttool'
 import { Div } from '@vkontakte/vkui';
+import Questions from './panels/Questions/Questions';
+import Vopros from './panels/Vopros/Vopros';
+import Tolking from './panels/Tolking/Tolking';
 import {login} from "./redux/actions";
 import {useDispatch} from "react-redux";
 import axios from "axios";
@@ -87,11 +91,15 @@ const App = () => {
 			<View activePanel={activePanel} popout={popout}>
 				<Events id='events' fetchedUser={fetchedUser} go={go} setEventId={setEventId}/>
 				<Home id='home' fetchedUser={fetchedUser} go={go} />
+				<Questions id='questions' fetchedUser={fetchedUser} go={go}/>
+				<Vopros id='vopros' fetchedUser={fetchedUser} go={go}/>
+				<Tolking id='tolking' fetchedUser={fetchedUser} go={go} />
 				<Persik id='persik' go={go} />
 				<Event id='event' go={go} eventId={eventId}/>
 				<CreateEvent id='createEvent' fetchedUser={fetchedUser} go={go} />
 			</View>
 			<ToolBar activeWin={activePanel} go={go}/>
+
 		</div>
 	);
 }

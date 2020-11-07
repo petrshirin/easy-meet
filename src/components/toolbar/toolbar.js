@@ -34,6 +34,10 @@ const ToolBar = ({ activeWin, go }) => (
             data-to="home"
         >{activeWin === 'home' ? <Icon24HelpOutline fill="#eb1e23"/> : <Icon24HelpOutline fill="#000"/>}</TabbarItem>
         <TabbarItem
+            selected={activeWin === 'tolking'}
+            data-to="tolking"
+          >{activeWin === 'tolking' ? <Icon24HelpOutline fill="#eb1e23"/> : <Icon24HelpOutline fill="#000"/>}</TabbarItem>
+          <TabbarItem
             onClick={go}
             selected={activeWin === 'persik'}
             data-to="persik"

@@ -1,0 +1,30 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import FixedLayout from '@vkontakte/vkui/dist/components/FixedLayout/FixedLayout';
+import Icon28Users3Outline from '@vkontakte/icons/dist/28/users_3_outline';
+import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
+import Cell from '@vkontakte/vkui/dist/components/Cell/Cell';
+import Icon28SafariOutline from '@vkontakte/icons/dist/28/safari_outline';
+import { Div } from '@vkontakte/vkui';
+import Epic from "@vkontakte/vkui/dist/components/Epic/Epic";
+import Tabbar from '@vkontakte/vkui/dist/components/Tabbar/Tabbar';
+import TabbarItem from '@vkontakte/vkui/dist/components/TabbarItem/TabbarItem'
+import Icon24HelpOutline from '@vkontakte/icons/dist/24/help_outline';
+import Icon28UserOutline from '@vkontakte/icons/dist/28/user_outline';
+import { Banner } from '@vkontakte/vkui';
+import Button from '@vkontakte/vkui/dist/components/Button/Button';
+import Icon20MessageOutline from '@vkontakte/icons/dist/20/message_outline';
+
+
+const BannerText = ({answ}) => (
+    <div>
+        <text><Icon20MessageOutline fill='#8a00ee'/></text> 
+        <text>{"Количество ответов - " + answ}</text>
+    </div>
+);
+
+BannerText.propTypes = {
+
+}
+
+export default BannerText;
