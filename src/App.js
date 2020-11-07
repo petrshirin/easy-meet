@@ -15,6 +15,9 @@ import { Div } from '@vkontakte/vkui';
 import Questions from './panels/Questions/Questions';
 import Vopros from './panels/Vopros/Vopros';
 import Tolking from './panels/Tolking/Tolking';
+import YourPage from './panels/YourPage/YourPage';
+import Settings from './panels/Settings/Settings';
+import Registration from './panels/Registration/Registration';
 import {login} from "./redux/actions";
 import {useDispatch} from "react-redux";
 import axios from "axios";
@@ -95,6 +98,10 @@ const App = () => {
 				<Questions id='questions' setQuestionId={setQuestionId} go={go}/>
 				<Vopros id='vopros' go={go} questionId={questionId}/>
 				<Tolking id='tolking' go={go} setQuestionId={setQuestionId}/>
+				<Tolking id='tolking' fetchedUser={fetchedUser} go={go} />
+				<YourPage id='yourpage' fetchedUser={fetchedUser} go={go} />
+				<Settings id='settings' fetchedUser={fetchedUser} go={go} />
+				<Registration id='registration' fetchedUser={fetchedUser} go={go} />
 				<Persik id='persik' go={go} />
 				<Event id='event' go={go} eventId={eventId}/>
 				<CreateEvent id='createEvent' fetchedUser={fetchedUser} go={go} />

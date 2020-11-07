@@ -9,10 +9,10 @@ import Div from '@vkontakte/vkui/dist/components/Div/Div';
 import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
 import ToolBar from '../../components/toolbar/toolbar'
 
-const Home = ({ id, go, fetchedUser }) => (
-	<Panel id={id}>
-		<PanelHeader>Example</PanelHeader>
-		{fetchedUser &&
+const Home = ({ id, go, fetchedUser}) => (
+    <Panel id={id}>
+        <PanelHeader>EasyMeet</PanelHeader>
+        {fetchedUser &&
 		<Group title="User Data Fetched with VK Bridge">
 			<Cell
 				before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}

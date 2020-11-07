@@ -32,12 +32,12 @@ const ToolBar = ({ activeWin, go }) => (
           >{activeWin === 'tolking' ? <Icon24HelpOutline fill="#eb1e23"/> : <Icon24HelpOutline fill="#000"/>}</TabbarItem>
           <TabbarItem
             onClick={go}
-            selected={activeWin === 'persik'}
-            data-to="persik"
-        >{activeWin === 'persik' ? <Icon28UserOutline fill="#eb1e23"/> : <Icon28UserOutline fill="#000"/>}</TabbarItem>
-    </Tabbar>
-
-}/>
+            selected={activeWin === 'yourpage'}
+            data-to="yourpage"
+          >{activeWin === 'yourpage' ? <Icon28UserOutline fill="#eb1e23"/> : <Icon28UserOutline fill="#000"/>}</TabbarItem>
+        </Tabbar>
+        
+      }></Epic>
 );
 
 ToolBar.props = {
