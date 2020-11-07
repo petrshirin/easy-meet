@@ -8,10 +8,14 @@ import Events from './panels/Events/Events'
 import Home from './panels/Home/Home';
 import Persik from './panels/Persik/Persik';
 import ToolBar from './components/toolbar/toolbar'
+import SelectTool from './components/selecttool/selecttool'
 import { Div } from '@vkontakte/vkui';
+import Questions from './panels/Questions/Questions';
+import Vopros from './panels/Vopros/Vopros';
+import Tolking from './panels/Tolking/Tolking';
 
 const App = () => {
-	const [activePanel, setActivePanel] = useState('Events');
+	const [activePanel, setActivePanel] = useState('home');
 	const [fetchedUser, setUser] = useState(null);
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
 
@@ -40,11 +44,15 @@ const App = () => {
 	return (
 		<div>
 			<View activePanel={activePanel} popout={popout}>
-			<Events id='events' fetchedUser={fetchedUser} go={go}/>
+				<Events id='events' fetchedUser={fetchedUser} go={go}/>
+				<Questions id='questions' fetchedUser={fetchedUser} go={go}/>
+				<Vopros id='vopros' fetchedUser={fetchedUser} go={go}/>
 				<Home id='home' fetchedUser={fetchedUser} go={go} />
+				<Tolking id='tolking' fetchedUser={fetchedUser} go={go} />
 				<Persik id='persik' go={go} />
 			</View>
 			<ToolBar activeWin={activePanel} go={go}/>
+
 		</div>
 	);
 }

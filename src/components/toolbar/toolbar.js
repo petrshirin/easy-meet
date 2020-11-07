@@ -12,25 +12,6 @@ import Icon24HelpOutline from '@vkontakte/icons/dist/24/help_outline';
 import Icon28UserOutline from '@vkontakte/icons/dist/28/user_outline';
 
 const ToolBar = ({ activeWin, go }) => (
-    // <FixedLayout vertical="bottom">
-    //     <table>
-    //         <td align="center">
-    //         <Cell
-    //             before={activeWin === "home" ? <Icon28Users3Outline fill="#eb1e23"/> : <Icon28Users3Outline fill="#000"/>}
-    //             onClick={go} 
-    //             data-to="home"
-    //         />
-    //         </td>
-    //         <td>
-    //         <Cell
-    //             before={activeWin === "persik" ? <Icon28SafariOutline fill="#eb1e23"/> : <Icon28SafariOutline fill="#000"/>}
-    //             onClick={go} 
-    //             data-to="persik"
-    //         />
-    //         </td>
-    //     </table>
-    // </FixedLayout>
-
     <Epic activeStory={activeWin} tabbar={
         <Tabbar>
           <TabbarItem
@@ -45,9 +26,9 @@ const ToolBar = ({ activeWin, go }) => (
           >{activeWin === 'persik' ? <Icon28SafariOutline fill="#eb1e23"/> : <Icon28SafariOutline fill="#000"/>}</TabbarItem>
           <TabbarItem
             onClick={go}
-            selected={activeWin === 'home'}
-            data-to="home"
-          >{activeWin === 'home' ? <Icon24HelpOutline fill="#eb1e23"/> : <Icon24HelpOutline fill="#000"/>}</TabbarItem>
+            selected={activeWin === 'tolking'}
+            data-to="tolking"
+          >{activeWin === 'tolking' ? <Icon24HelpOutline fill="#eb1e23"/> : <Icon24HelpOutline fill="#000"/>}</TabbarItem>
           <TabbarItem
             onClick={go}
             selected={activeWin === 'persik'}
