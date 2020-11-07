@@ -1,0 +1,17 @@
+.Button--lvl-primary {
+    background-color: #8A00EE;
+    margin-top: 10%;
+}
+
+.Checkbox__container {
+    width: 20px;
+}
+
+.tr {
+    align-content: center;
+}
+
+.creatEvent {
+    display: grid;
+    grid-template-columns: auto auto;
+}

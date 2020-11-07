@@ -15,11 +15,13 @@ import {login} from "./redux/actions";
 import {useDispatch} from "react-redux";
 import axios from "axios";
 import {USER_DATA_STORAGE_KEY} from "./redux/reducers/store";
+import CreateEvent from './panels/create_event/create_event';
 
 const App = () => {
 	const [activePanel, setActivePanel] = useState('events');
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
 	const [fetchedUser, serUser] = useState(null);
+	const [eventId, setEventId] = useState(0);
 
 	const dispatch = useDispatch()
 
@@ -83,10 +85,11 @@ const App = () => {
 	return (
 		<div>
 			<View activePanel={activePanel} popout={popout}>
-				<Events id='events' fetchedUser={fetchedUser} go={go}/>
+				<Events id='events' fetchedUser={fetchedUser} go={go} setEventId={setEventId}/>
 				<Home id='home' fetchedUser={fetchedUser} go={go} />
 				<Persik id='persik' go={go} />
-				<Event id='event' fetchedUser={fetchedUser} go={go} />
+				<Event id='event' go={go} eventId={eventId}/>
+				<CreateEvent id='createEvent' fetchedUser={fetchedUser} go={go} />
 			</View>
 			<ToolBar activeWin={activePanel} go={go}/>
 		</div>

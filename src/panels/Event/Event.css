@@ -1,0 +1,13 @@
+.MiniInfoCell {
+    margin-left: 10%;
+}
+
+.centerHeader span{
+    font-family: Roboto;
+    font-size: medium;
+    margin-bottom: 20%;
+}
+
+.MiniInfoCell__content {
+    flex: none;
+}
