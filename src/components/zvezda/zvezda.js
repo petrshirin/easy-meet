@@ -21,17 +21,41 @@ import Icon24FavoriteOutline from '@vkontakte/icons/dist/24/favorite_outline';
 import Icon24Favorite from '@vkontakte/icons/dist/24/favorite';
 import './zvezda.css';
 import { useState, useEffect, useRef, Fragment } from 'react';
+import {USER_DATA_STORAGE_KEY} from "../../redux/reducers/store";
+import {BACKEND_URL} from "../../requests";
+import ScreenSpinner from "@vkontakte/vkui/dist/components/ScreenSpinner/ScreenSpinner";
+import axios from 'axios';
 
 
-const Zvezda = ({autor, otv}) => {
-    const [countBlackStars, setBlackStars] = useState(0)
-    const [countWhiteStars, setWhiteStars] = useState(5)
+const Zvezda = ({autor, otv, mark, answerId}) => {
+    const [countBlackStars, setBlackStars] = useState(mark ? mark : 0)
+    const [countWhiteStars, setWhiteStars] = useState(mark ? 5 - mark : 5)
+    const [popout, setPopout] = useState(null);
+
     const updateStars = e => {
-        //
+        doMark()
         setBlackStars(e.currentTarget.dataset.count)
         setWhiteStars(5 - e.currentTarget.dataset.count)
-        console.log(e.currentTarget.dataset.count)
     }
+
+    async function doMark() {
+        setPopout(<ScreenSpinner size='large'/>)
+        let userToken = JSON.parse(localStorage.getItem(USER_DATA_STORAGE_KEY));
+        await axios.get(`${BACKEND_URL}/answer/${answerId}/mark`,
+            {
+                headers: {
+                    'Authorization': `Token ${userToken.token}`,
+                    'Content-Type': 'application/json;charset=utf-8'
+                }
+            }
+        ).then((resp) => {
+            if (resp.status === 200) {
+            }
+
+            setPopout(null)
+        });
+    }
+
     return (
 <Group>
     <div><text>{autor}</text></div>

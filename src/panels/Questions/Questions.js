@@ -14,22 +14,56 @@ import { Banner } from '@vkontakte/vkui';
 import { FormLayout, FormLayoutGroup, Input } from '@vkontakte/vkui';
 import Icon24ChevronLeft from '@vkontakte/icons/dist/24/chevron_left';
 import './Questions.css';
+import { useState, useEffect, useRef, Fragment } from 'react';
+import axios from 'axios';
+import {USER_DATA_STORAGE_KEY} from "../../redux/reducers/store";
+import {BACKEND_URL} from "../../requests";
 
-const Questions = ({ id, go, fetchedUser }) => (
+const Questions = ({ id, setQuestionId, go }) => {
+
+	const [part, setPart] = useState('')
+	const [text, setText] = useState('')
+
+	const doQuestion = e => {
+		createQuestion()
+		setQuestionId(0)
+		go(e)
+	}
+
+	async function createQuestion() {
+		let userToken = JSON.parse(localStorage.getItem(USER_DATA_STORAGE_KEY));
+		await axios.post(`${BACKEND_URL}/question/create`,
+			{
+				text: text,
+				part: part
+			},
+			{
+				headers: {
+					'Authorization': `Token ${userToken.token}`,
+					'Content-Type': 'application/json;charset=utf-8'
+				}
+			}
+		).then((resp) => {
+			if (resp.status === 200) {
+			}
+		});
+	}
+
+	return (
 	<Panel id={id}>
 		<PanelHeader>Задать вопрос</PanelHeader>
             <FormLayout>
                 <FormLayoutGroup top="Ваш вопрос">
-                    <Input type="text"/>
-                    <SelectTool></SelectTool>
-                    <div className = "aue"><Button size="l"  onClick={go} data-to="tolking">Задать вопрос</Button></div>
+                    <Input type="text" onChange={(e) => setText(e.target.value)}/>
+                    <SelectTool setPart={setPart}/>
+                    <div className = "aue"><Button size="l" onClick={doQuestion} data-to="tolking">Задать вопрос</Button></div>
                 </FormLayoutGroup>
             </FormLayout>
 			<div className = "back">
-          		<Icon24ChevronLeft onClick={go} data-to="tolking"></Icon24ChevronLeft>
+          		<Icon24ChevronLeft onClick={go} data-to="tolking"/>
 			</div>
 	</Panel>
-);
+)};
 
 Questions.propTypes = {
 	id: PropTypes.string.isRequired,

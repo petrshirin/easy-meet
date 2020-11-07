@@ -26,6 +26,7 @@ const App = () => {
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
 	const [fetchedUser, serUser] = useState(null);
 	const [eventId, setEventId] = useState(0);
+	const [questionId, setQuestionId] = useState(0);
 
 	const dispatch = useDispatch()
 
@@ -91,9 +92,9 @@ const App = () => {
 			<View activePanel={activePanel} popout={popout}>
 				<Events id='events' fetchedUser={fetchedUser} go={go} setEventId={setEventId}/>
 				<Home id='home' fetchedUser={fetchedUser} go={go} />
-				<Questions id='questions' fetchedUser={fetchedUser} go={go}/>
-				<Vopros id='vopros' fetchedUser={fetchedUser} go={go}/>
-				<Tolking id='tolking' fetchedUser={fetchedUser} go={go} />
+				<Questions id='questions' setQuestionId={setQuestionId} go={go}/>
+				<Vopros id='vopros' go={go} questionId={questionId}/>
+				<Tolking id='tolking' go={go} setQuestionId={setQuestionId}/>
 				<Persik id='persik' go={go} />
 				<Event id='event' go={go} eventId={eventId}/>
 				<CreateEvent id='createEvent' fetchedUser={fetchedUser} go={go} />

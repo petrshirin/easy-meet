@@ -13,8 +13,8 @@ import Icon24HelpOutline from '@vkontakte/icons/dist/24/help_outline';
 import Icon28UserOutline from '@vkontakte/icons/dist/28/user_outline';
 
 
-const SelectTool = ({}) => (
-    <Select className = "sell" placeholder="Тема">
+const SelectTool = ({setPart}) => (
+    <Select className = "sell" placeholder="Тема" onChange={(e) => setPart(e.target.value)}>
         <option value="foreign">Иностранные языки</option>
         <option value="design">Дизайн и творчество</option>
         <option value="ege">ЕГЭ и ОГЭ</option>

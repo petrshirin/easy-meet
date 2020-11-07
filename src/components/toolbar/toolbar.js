@@ -19,9 +19,6 @@ const ToolBar = ({ activeWin, go }) => (
             data-to="events"
             selected={activeWin === 'events'}
           >{(activeWin === 'events' || activeWin === 'event' || activeWin === 'createEvent') ? <Icon28Users3Outline fill="#eb1e23"/> : <Icon28Users3Outline fill="#000"/>}</TabbarItem>
-          <TabbarItem
-        >{(activeWin === 'events' || activeWin === 'event') ? <Icon28Users3Outline fill="#eb1e23"/> :
-            <Icon28Users3Outline fill="#000"/>}</TabbarItem>
         <TabbarItem
             onClick={go}
             selected={activeWin === 'persik'}
@@ -30,10 +27,6 @@ const ToolBar = ({ activeWin, go }) => (
             <Icon28SafariOutline fill="#000"/>}</TabbarItem>
         <TabbarItem
             onClick={go}
-            selected={activeWin === 'home'}
-            data-to="home"
-        >{activeWin === 'home' ? <Icon24HelpOutline fill="#eb1e23"/> : <Icon24HelpOutline fill="#000"/>}</TabbarItem>
-        <TabbarItem
             selected={activeWin === 'tolking'}
             data-to="tolking"
           >{activeWin === 'tolking' ? <Icon24HelpOutline fill="#eb1e23"/> : <Icon24HelpOutline fill="#000"/>}</TabbarItem>

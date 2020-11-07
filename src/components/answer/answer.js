@@ -17,19 +17,21 @@ import Icon20MessageOutline from '@vkontakte/icons/dist/20/message_outline';
 import BannerText from '../textbanner/textbanner'
 import './answer.css';
 
-const Answer = ({go, head, subhead, ans, but, fetchedUser}) => (
+const Answer = ({go, head, subhead, ans, but, fetchedUser}) => {
 
-<Banner className = "ans"
-    header= {head}
-    subheader= {subhead}    
-    text = {<BannerText answ = {ans}/>}
-    actions = {but}
-  />
 
-);
+	return (
+		<Banner className = "ans"
+				header= {head}
+				subheader= {subhead}
+				text = {<BannerText answ = {ans}/>}
+				actions = {but}
+		/>
+	)
+
+};
 
 Answer.propTypes = {
-	id: PropTypes.string.isRequired,
 	go: PropTypes.func.isRequired,
 	fetchedUser: PropTypes.shape({
 		photo_200: PropTypes.string,
