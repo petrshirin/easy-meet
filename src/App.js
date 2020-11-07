@@ -10,6 +10,7 @@ import Home from './panels/Home/Home';
 import Persik from './panels/Persik/Persik';
 import ToolBar from './components/toolbar/toolbar'
 import { Div } from '@vkontakte/vkui';
+import CreateEvent from './panels/create_event/create_event';
 
 const App = () => {
 	const [activePanel, setActivePanel] = useState('events');
@@ -44,6 +45,7 @@ const App = () => {
 				<Home id='home' fetchedUser={fetchedUser} go={go} />
 				<Persik id='persik' go={go} />
 				<Event id='event' fetchedUser={fetchedUser} go={go} />
+				<CreateEvent id='createEvent' fetchedUser={fetchedUser} go={go} />
 			</View>
 			<ToolBar activeWin={activePanel} go={go}/>
 		</div>

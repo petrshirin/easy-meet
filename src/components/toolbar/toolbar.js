@@ -18,7 +18,7 @@ const ToolBar = ({ activeWin, go }) => (
             onClick={go}
             data-to="events"
             selected={activeWin === 'events'}
-          >{(activeWin === 'events' || activeWin === 'event') ? <Icon28Users3Outline fill="#eb1e23"/> : <Icon28Users3Outline fill="#000"/>}</TabbarItem>
+          >{(activeWin === 'events' || activeWin === 'event' || activeWin === 'createEvent') ? <Icon28Users3Outline fill="#eb1e23"/> : <Icon28Users3Outline fill="#000"/>}</TabbarItem>
           <TabbarItem
             onClick={go}
             selected={activeWin === 'persik'}

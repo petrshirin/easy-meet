@@ -14,10 +14,12 @@ import Card from '@vkontakte/vkui/dist/components/Card/Card';
 import UserStack from '@vkontakte/vkui/dist/components/UsersStack/UsersStack';
 import Cell from '@vkontakte/vkui/dist/components/Cell/Cell';
 import PanelHeaderButton from '@vkontakte/vkui/dist/components/PanelHeaderButton/PanelHeaderButton';
+// import CreateEvent from './panels/create_event/create_event';
 
 import Icon28AddCircleOutline from '@vkontakte/icons/dist/28/add_circle_outline';
 
 import "./Events.css";
+import CardEvent from '../../components/cardEvent/cardEvent';
 import { Avatar, Caption, Headline, ModalPageHeader, RichCell } from '@vkontakte/vkui';
 
 
@@ -51,25 +53,10 @@ const Events = ({ id, go, fetchedUser}) => {
 
 			<Group separator="hide" header={<Header mode="secondary"></Header>}>
 				<CardGrid className="centerHeader">
-					<Card size="l" mode="outline" onClick={go} data-to="event">
-						<ModalPageHeader>Мероприятие 1</ModalPageHeader>
-						<Text>00.00.0000 в 00:00</Text>
-						{fetchedUser &&
-							<UserStack
-								photos={[
-									fetchedUser.photo_200,
-									fetchedUser.photo_200,
-									fetchedUser.photo_200
-								]}
-								>+3</UserStack>}
-					</Card>
-					<Card size="l" mode="outline">
-						<ModalPageHeader>Мероприятие 2</ModalPageHeader>
-						<div style={{ height: 96 }} />
-					</Card>
+					<CardEvent go={go}/>
 				</CardGrid>
 			</Group>
-			<TabbarItem style= {{ position: "absolute", right: '10px'}}><Icon28AddCircleOutline fill="#8A00EE"/></TabbarItem>
+			<div className = "ico"><Icon28AddCircleOutline fill='#8a00ee' onClick={go} data-to="createEvent" width = {50} height = {50}/></div>
 		</Panel>
 	)
 };
