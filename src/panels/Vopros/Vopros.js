@@ -108,7 +108,7 @@ const Vopros = ({ id, go, questionId}) => {
 
     return (
 	<Panel id={id}>
-		<PanelHeader>{question.text.slice(0, 15)}...</PanelHeader>
+		<div className = "zag"><PanelHeader>{question.text.slice(0, 15)}...</PanelHeader></div>
             <div className="tex">
                 <text>{`${question.creator.first_name} ${question.creator.second_name}`}</text>
             </div>

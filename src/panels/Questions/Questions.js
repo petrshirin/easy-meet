@@ -51,7 +51,7 @@ const Questions = ({ id, setQuestionId, go }) => {
 
 	return (
 	<Panel id={id}>
-		<PanelHeader>Задать вопрос</PanelHeader>
+		<PanelHeader><div className = "iop">Задать вопрос</div></PanelHeader>
             <FormLayout>
                 <FormLayoutGroup top="Ваш вопрос">
                     <Input type="text" onChange={(e) => setText(e.target.value)}/>

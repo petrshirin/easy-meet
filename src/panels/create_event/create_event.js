@@ -127,7 +127,7 @@ const CreateEvent = ({ id, go, p_eventId}) => {
 
     return (
     <Panel id={id} className="centerHeader" onScroll>
-        <PanelHeader left={<PanelHeaderButton id={"backToEvents"} onClick={go} data-to="events">{<Icon24Back fill="#000"/>}</PanelHeaderButton>}>Мероприятие</PanelHeader>
+        <PanelHeader left={<PanelHeaderButton id={"backToEvents"} onClick={go} data-to="events">{<Icon24Back fill="#000"/>}</PanelHeaderButton>}><div className = "ta">Мероприятие</div></PanelHeader>
         <Input placeholder="Название" value={name} onChange={(e) => setName(e.target.value)}/>
 
         <table style={{ margin: 'auto', marginTop: '10%' }}>

@@ -4,7 +4,7 @@ import {login} from "./redux/actions";
 import {useDispatch} from "react-redux";
 
 
-export const BACKEND_URL = 'http://localhost:8000'
+export const BACKEND_URL = 'https://easy.mytesttelegrambotdev.ru'
 
 
 

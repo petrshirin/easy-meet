@@ -4,6 +4,7 @@ import ModalPageHeader from '@vkontakte/vkui/dist/components/ModalPageHeader/Mod
 import Text from '@vkontakte/vkui/dist/components/Typography/Text/Text';
 import UserStack from '@vkontakte/vkui/dist/components/UsersStack/UsersStack';
 import {useDispatch} from "react-redux";
+import './cardcss.css';
 import {openEvent} from "../../redux/actions";
 
 const { useState } = require("react");
@@ -19,8 +20,8 @@ const CardEvent = (props) => {
     }
 
     return (
-        <Card size="l" mode="outline" onClick={goToEventCard} data-to="event" data-eventId={props.eventId}>
-            <ModalPageHeader>{props.name}</ModalPageHeader>
+         <Card size="l" mode="outline" onClick={goToEventCard} data-to="event" data-eventId={props.eventId}>
+            <div className = "hh"><ModalPageHeader>{props.name}</ModalPageHeader></div>
             <Text>{props.date} в {props.time}</Text>
             {props.members.length > 0 &&
                 <UserStack

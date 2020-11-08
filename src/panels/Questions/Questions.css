@@ -12,6 +12,9 @@
         justify-content: center;
         flex-direction: row;
     }
+.iop {
+    text-align: center;
+}
 
 .aue button{
     background-color: #8a00ee;

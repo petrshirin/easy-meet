@@ -11,6 +11,10 @@
     align-content: center;
 }
 
+.ta {
+    text-align: center;
+}
+
 .creatEvent {
     display: grid;
     grid-template-columns: auto auto;

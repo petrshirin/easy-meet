@@ -15,6 +15,10 @@
     font-family: Roboto;
 }
 
+.cent{
+    text-align: center;
+}
+
 .centerHeader div {
     text-align-last: center;
     font-size: small;
