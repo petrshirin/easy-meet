@@ -31,7 +31,7 @@ import MapMeet from "./panels/map/map";
 
 const App = () => {
 	const [activePanel, setActivePanel] = useState('events');
-	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
+	const [popout, setPopout] = useState(null);
 	const [fetchedUser, setUser] = useState(null);
 	const [eventId, setEventId] = useState(0);
 	const [questionId, setQuestionId] = useState(0);
@@ -89,9 +89,10 @@ const App = () => {
 						setActivePanel('tutorial1')
 					}
 					dispatch(login(resp.data.data))
-					fetchData()
 				}
 			});
+			fetchData()
+			setPopout(null)
 		}
 
 		getUserToken()

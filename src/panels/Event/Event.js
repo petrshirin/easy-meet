@@ -21,7 +21,7 @@ import ScreenSpinner from "@vkontakte/vkui/dist/components/ScreenSpinner/ScreenS
 
 
 const Event = ({ id, go, eventId }) => {
-    const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
+    const [popout, setPopout] = useState(null);
     const [isMember, setIsMember] = useState(false);
     const [eventInfo, setInfo] = useState({
         name: "Мероприятие",
