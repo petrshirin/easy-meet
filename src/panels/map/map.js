@@ -17,8 +17,8 @@ const Map = ReactMapboxGl({
 
 
 const MapMeet = ({id, go, setActivePanel, setProfilerUser}) => {
-    const [lat, setLat] = useState(55.75);
-    const [lon, setLon] = useState(37.57);
+    const [lat, setLat] = useState(52.287054);
+    const [lon, setLon] = useState(104.281047);
     const [selfPosition, setPosition] = useState({
         "first_name": "Имя",
         "second_name": "Фамилия",
