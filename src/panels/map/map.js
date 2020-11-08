@@ -16,7 +16,7 @@ const Map = ReactMapboxGl({
 });
 
 
-const MapMeet = ({id, go, setActivePanel}) => {
+const MapMeet = ({id, go, setActivePanel, setProfilerUser}) => {
     const [lat, setLat] = useState(55.75);
     const [lon, setLon] = useState(37.57);
     const [selfPosition, setPosition] = useState({
@@ -103,8 +103,8 @@ const MapMeet = ({id, go, setActivePanel}) => {
                 }}
                 center={[lon, lat]}
             >
-                <MarkerMeet go={go} userInfo={selfPosition} self={true}/>
-                {markers.map((item) => (<MarkerMeet go={go} userInfo={item}/>))}
+                <MarkerMeet go={go} userInfo={selfPosition} self={true} setProfilerUser={setProfilerUser}/>
+                {markers.map((item) => (<MarkerMeet go={go} userInfo={item} setProfilerUser={setProfilerUser}/>))}
 
             </Map>
         </Panel>

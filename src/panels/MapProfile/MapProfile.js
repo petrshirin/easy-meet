@@ -11,16 +11,19 @@ import Icon24Back from '@vkontakte/icons/dist/24/back';
 
 const MapProfile = ({ id, go, fetchedUser}) => (
     <Panel id={id}>
-        <PanelHeader left={<PanelHeaderButton onClick={go} data-to="map">{<Icon24Back fill="#000"/>}</PanelHeaderButton>}></PanelHeader>
+        <PanelHeader left={<PanelHeaderButton onClick={go} data-to="map">{<Icon24Back fill="#000"/>}</PanelHeaderButton>}>
+            {`${fetchedUser.first_name} ${fetchedUser.second_name}`}
+        </PanelHeader>
         <RichCell 
         disabled
         multiline
-        before={<Avatar size={120} src={fetchedUser.photo_200}></Avatar>}>
-        <div>{`${fetchedUser.first_name} ${fetchedUser.last_name}`}</div>
-        <div><text>5.0</text></div>
+        before={<Avatar size={120} src={fetchedUser.avatar}/>}>
+        <div>{`${fetchedUser.first_name} ${fetchedUser.second_name}`}</div>
+        <div><text>{fetchedUser.score}</text></div>
         </RichCell>
-        <Interests name = "Иностранные языки"></Interests>
-        <Interests name = "ЕГЭ и ОГЭ"></Interests>
+        {fetchedUser.interests.map((item) => (
+            <Interests name = {item.name}/>
+        ))}
         <div className = "ico">
     </div>
 

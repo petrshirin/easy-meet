@@ -30,11 +30,14 @@ const Settings = ({ id, go, fetchedUser, fetchData}) => {
             let new_interests = interests
             new_interests.push(+e.currentTarget.dataset.id)
             setInterests(new_interests)
+            console.log(new_interests)
         }
         else {
             let new_interests = interests.filter(item => item !== +e.currentTarget.dataset.id)
             setInterests(new_interests)
+            console.log(new_interests)
         }
+
     }
 
     useEffect(() => {
@@ -50,7 +53,6 @@ const Settings = ({ id, go, fetchedUser, fetchData}) => {
 
     const checkCheckbox = (checkboxId) => {
         let arr = fetchedUser.interests.map((item) => item.id)
-        console.log(arr)
         return arr.includes(checkboxId)
     }
 

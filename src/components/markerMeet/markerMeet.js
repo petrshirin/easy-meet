@@ -5,7 +5,7 @@ import ReactMapboxGl, {Marker, Popup} from 'react-mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import PopupUser from '../../components/popup_user/popup_user'
 
-const MarkerMeet = ({go, userInfo, self}) => {
+const MarkerMeet = ({go, userInfo, self, setProfilerUser}) => {
     const [vis, setVis] = useState(-1);
 
     const setVS = e => {
@@ -33,9 +33,7 @@ const MarkerMeet = ({go, userInfo, self}) => {
                     visibility: (vis === -1 ? "hidden" : "visible")
                 }}
 
-            ><PopupUser go={go}
-                        userName={`${userInfo.first_name} ${userInfo.second_name}`}
-                        avatar={userInfo.avatar} userUrl={userInfo.user_url}/>
+            ><PopupUser go={go} userInfo={userInfo} setProfilerUser={setProfilerUser}/>
             </Popup>
         </div>
     )

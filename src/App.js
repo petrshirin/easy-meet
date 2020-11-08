@@ -35,6 +35,7 @@ const App = () => {
 	const [fetchedUser, setUser] = useState(null);
 	const [eventId, setEventId] = useState(0);
 	const [questionId, setQuestionId] = useState(0);
+	const [profilerUser, setProfilerUser] = useState(null);
 
 	const dispatch = useDispatch()
 
@@ -118,7 +119,7 @@ const App = () => {
 				<Event id='event' go={go} eventId={eventId}/>
 				<CreateEvent id='createEvent' go={go} />
 				<Tutorial1 id='tutorial1' fetchedUser={fetchedUser} go={go} />
-				<MapMeet id='map' go={go} setActivePanel={setActivePanel}/>
+				<MapMeet id='map' go={go} setActivePanel={setActivePanel} setProfilerUser={setProfilerUser}/>
 				<MapProfile id='mapProfile' go={go} fetchedUser={fetchedUser}/>
 			</View>
 			<ToolBar activeWin={activePanel} go={go}/>

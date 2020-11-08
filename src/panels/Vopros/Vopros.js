@@ -60,15 +60,15 @@ const Vopros = ({ id, go, questionId}) => {
         }
     )
     const [answer, SetAnswer] = useState("")
+    const [isUpdateQuestion, NeedUpdateQuestion] = useState(false)
 
 
     useEffect(() => {
         getQuestion()
-    }, [])
+    }, [isUpdateQuestion])
 
     const doAnswer = e => {
         sendAnswer()
-        getQuestion()
     }
 
 
@@ -85,6 +85,7 @@ const Vopros = ({ id, go, questionId}) => {
             if (resp.status === 200) {
                 SetQuestion(resp.data.data)
                 setPopout(null)
+                NeedUpdateQuestion(true)
             }
         });
     }

@@ -1,14 +1,19 @@
 import { Avatar, SimpleCell } from '@vkontakte/vkui';
 import React, {useState} from 'react';
 
-const PopupUser = ({ go, userName, avatar, userUrl}) => {
+const PopupUser = ({ go, userInfo, setProfilerUser}) => {
+
+    const goToProfile = e => {
+        setProfilerUser(userInfo)
+        go(e)
+    }
 
     return (
         <SimpleCell>
             <Avatar
-            onClick={go}
-            data-to="mapProfile" src={avatar}/>
-            <a href={userUrl}>{userName}</a>
+            onClick={goToProfile}
+            data-to="mapProfile" src={userInfo.avatar}/>
+            <a onClick={goToProfile}>{`${userInfo.first_name} ${userInfo.second_name}`}</a>
         </SimpleCell>
     ) 
 };
