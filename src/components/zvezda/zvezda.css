@@ -1,6 +1,20 @@
 .tg {
     font-size: 22px;
 }
-.container {overflow:hidden;width:200px;}
+.container {overflow:hidden;width:200px; margin-left: 5%;}
 .box {white-space:nowrap;}
-.box div {width:30px;display:inline-block;}
+.box div {width:30px;display:inline-block; }
+
+.tex {
+    font-family: 'Roboto', sans-serif;
+    margin-left: 5%;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.auttex {
+    font-family: 'Roboto', sans-serif;
+    margin-left: 5%;
+    margin-top: 15px;
+    font-size: 18px;
+}

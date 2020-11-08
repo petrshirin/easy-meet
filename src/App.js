@@ -18,6 +18,8 @@ import Tolking from './panels/Tolking/Tolking';
 import YourPage from './panels/YourPage/YourPage';
 import Settings from './panels/Settings/Settings';
 import Registration from './panels/Registration/Registration';
+import Tutorial1 from './panels/tutorial1/tutorial1';
+
 import {login} from "./redux/actions";
 import {useDispatch} from "react-redux";
 import axios from "axios";
@@ -111,6 +113,7 @@ const App = () => {
 				<Persik id='persik' go={go} />
 				<Event id='event' go={go} eventId={eventId}/>
 				<CreateEvent id='createEvent' go={go} />
+				<Tutorial1 id='tutorial1' fetchedUser={fetchedUser} go={go} />
 			</View>
 			<ToolBar activeWin={activePanel} go={go}/>
 

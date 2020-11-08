@@ -1,0 +1,8 @@
+.nowrap {
+    position: relative;
+    white-space: nowrap;
+}
+
+.cont {overflow:hidden;width:200px;}
+.bo {white-space:nowrap;}
+.bo div {width:30px;display:inline-block;font-family: 'Roboto', sans-serif;}

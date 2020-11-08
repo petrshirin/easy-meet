@@ -58,8 +58,8 @@ const Zvezda = ({autor, otv, mark, answerId}) => {
 
     return (
 <Group>
-    <div><text>{autor}</text></div>
-    <div className = "tg"><text>{otv}</text></div>
+    <div className = "tex"><text>{autor}</text></div>
+    <div className = "auttex"><text>{otv}</text></div>
     <div className = "container">
         <div className = "box">
             <div>{countBlackStars >= 1 ? <Icon24Favorite/> : <Icon24FavoriteOutline onClick = {updateStars} data-count = {1}/>}</div>
