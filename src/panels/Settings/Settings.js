@@ -86,7 +86,8 @@ const Settings = ({ id, go, fetchedUser, fetchData}) => {
         <div onChange={addRemoveInterest} data-id={4}><Checkbox defaultChecked={checkCheckbox(4)}>ЕГЭ и ОГЭ</Checkbox></div>
         <div onChange={addRemoveInterest} data-id={5}><Checkbox defaultChecked={checkCheckbox(5)}>Робототехника</Checkbox></div>
         <div onChange={addRemoveInterest} data-id={6}><Checkbox defaultChecked={checkCheckbox(6)}>Программирование</Checkbox></div>
-        <div className = "aue"><Button size="l"  onClick={doInterests} data-to="yourpage">Сохранить</Button></div>
+        <div className = "auex"><Button size="l"  onClick={doInterests} data-to="yourpage">Сохранить</Button></div>
+        <div className = "otstup"></div>
     </Panel>
 )};
 

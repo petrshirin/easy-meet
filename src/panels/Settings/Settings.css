@@ -22,8 +22,11 @@
     z-index: 10;
   }
 
-.aue {
-    margin-top: 40px;
+.otstup{
+    margin-bottom: 60px;
+}
+
+.auex {
     font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;

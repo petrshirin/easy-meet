@@ -84,7 +84,7 @@ const Tolking = ({ id, go, setQuestionId}) => {
 		<div className="ico">
 			<Icon28AddCircleOutline fill='#8a00ee' onClick={go} data-to="questions" width={50} height={50}/>
 		</div>
-
+		<div className = "otstu">.</div>
 	</Panel>)
 };
 

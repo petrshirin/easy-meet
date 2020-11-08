@@ -73,7 +73,8 @@ const Registration = ({ id, go, fetchedUser, fetchData}) => {
 			<div className = "cb" onChange={addRemoveInterest} data-id={4}><CheckBox name = "ЕГЭ и ОГЭ"/></div>
 			<div className = "cb" onChange={addRemoveInterest} data-id={5}><CheckBox name = "Робототехника"/></div>
 			<div className = "cb" onChange={addRemoveInterest} data-id={6}><CheckBox name = "Программирование"/></div>
-			<div className = "aue"><Button size="l"  onClick={doInterests} data-to="events">Регистрация</Button></div>
+			<div className = "aues"><Button size="l"  onClick={doInterests} data-to="events">Регистрация</Button></div>
+			<div className = "otst">.</div>
 		</Panel>
 	) ;
 }

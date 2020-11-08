@@ -26,12 +26,16 @@
     z-index: 10;
   }
 
-.aue {
+.aues {
     margin-top: 40px;
     font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
     flex-direction: row;
+}
+
+.otst {
+    margin-bottom: 60px;
 }
 
 .aue button{

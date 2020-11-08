@@ -8,6 +8,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import bridge from "@vkontakte/vk-bridge";
 import {USER_DATA_STORAGE_KEY} from "../../redux/reducers/store";
 import axios from "axios";
+import "./map.css";
 import {BACKEND_URL} from "../../requests";
 
 const Map = ReactMapboxGl({
@@ -94,7 +95,7 @@ const MapMeet = ({id, go, setActivePanel, setProfilerUser}) => {
 
     return (
         <Panel id={id} className="centerHeader">
-            <PanelHeader>Карта</PanelHeader>
+            <PanelHeader><div className = "kol">Карта</div></PanelHeader>
             <Map
                 style="mapbox://styles/mapbox/streets-v9"
                 containerStyle={{

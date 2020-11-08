@@ -10,6 +10,7 @@ import Tabbar from '@vkontakte/vkui/dist/components/Tabbar/Tabbar';
 import TabbarItem from '@vkontakte/vkui/dist/components/TabbarItem/TabbarItem'
 import Icon24HelpOutline from '@vkontakte/icons/dist/24/help_outline';
 import Icon28UserOutline from '@vkontakte/icons/dist/28/user_outline';
+import './toolbar.css';
 
 const ToolBar = ({ activeWin, go }) => (
     <Epic activeStory={activeWin} tabbar={
@@ -37,7 +38,6 @@ const ToolBar = ({ activeWin, go }) => (
         >{activeWin === 'yourpage' ? <Icon28UserOutline fill="#eb1e23"/> :
             <Icon28UserOutline fill="#000"/>}</TabbarItem>
     </Tabbar>
-
 }/>
 );
 

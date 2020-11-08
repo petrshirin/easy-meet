@@ -81,7 +81,7 @@ const Events = ({id, go, setEventId}) => {
     };
     return (
         <Panel id={id} style={{}}>
-            <PanelHeader>EasyMeet</PanelHeader>
+            <div className = "cent"><PanelHeader>EasyMeet</PanelHeader></div>
             <HorizontalScrol className="bar">
                 <div style={{display: 'flex'}}>
                     <div style={{color: activeStatus === "0" ? "#eb1e23" : "#000"}} onClick={setSt} data-st="0">
