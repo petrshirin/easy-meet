@@ -58,6 +58,7 @@ const Event = ({ id, go, eventId }) => {
             }
         ).then((resp) => {
             if (resp.status === 200) {
+                console.log(resp.data)
                 setInfo(resp.data.data.meeting)
                 setIsMember(resp.data.data.is_member)
                 setPopout(null)

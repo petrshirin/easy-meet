@@ -7,7 +7,8 @@ import {BACKEND_URL} from "../../requests";
 import axios from 'axios';
 
 const ButEvent = ({urState, link_to, setIsMember, eventId}) => {
-    const [action, setAction] = useState('subscribe')
+    console.log(urState)
+    const [action, setAction] = useState(!urState ? 'subscribe' : "unsubscribe")
 
     const doAction = e => {
         sendAction()
