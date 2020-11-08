@@ -25,6 +25,9 @@ import {useDispatch} from "react-redux";
 import axios from "axios";
 import {USER_DATA_STORAGE_KEY} from "./redux/reducers/store";
 import CreateEvent from './panels/create_event/create_event';
+import MapProfile from './panels/MapProfile/MapProfile'
+import MapMeet from "./panels/map/map";
+
 
 const App = () => {
 	const [activePanel, setActivePanel] = useState('events');
@@ -114,7 +117,7 @@ const App = () => {
 				<Event id='event' go={go} eventId={eventId}/>
 				<CreateEvent id='createEvent' go={go} />
 				<Tutorial1 id='tutorial1' fetchedUser={fetchedUser} go={go} />
-				<MapMeet id='map'go={go}/>
+				<MapMeet id='map' go={go} setActivePanel={setActivePanel}/>
 				<MapProfile id='mapProfile' go={go} fetchedUser={fetchedUser}/>
 			</View>
 			<ToolBar activeWin={activePanel} go={go}/>

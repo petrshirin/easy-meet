@@ -1,42 +1,43 @@
 import React, {useState} from 'react';
 import Icon28Place from '@vkontakte/icons/dist/28/place';
 
-import ReactMapboxGl, { Marker, Popup } from 'react-mapbox-gl';
+import ReactMapboxGl, {Marker, Popup} from 'react-mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import PopupUser from '../../components/popup_user/popup_user'
 
-const MarkerMeet = ({go}) => {
-    const [lat, setLat] = useState(55.75);
-    const [lon, setLon] = useState(37.57);
+const MarkerMeet = ({go, userInfo, self}) => {
     const [vis, setVis] = useState(-1);
 
     const setVS = e => {
-      setVis(e.currentTarget.dataset.vs);
-      console.log(vis);
+        setVis(e.currentTarget.dataset.vs);
     };
 
     return (
         <div>
-            <Marker 
+            <Marker
                 style=""
                 coordinates={{
-                lng: lon, 
-                lat: lat
+                    lng: userInfo.longitude,
+                    lat: userInfo.latitude
                 }}
                 anchor="top"
                 onClick={setVS}
                 data-vs={vis * -1}
-            ><Icon28Place fill="#8A00EE"/></Marker>
+            ><Icon28Place fill={self ? "#8A00EE" : "#eb1e23"}/></Marker>
             <Popup
                 coordinates={{
-                lng: lon,
-                lat: lat
+                    lng: userInfo.longitude,
+                    lat: userInfo.latitude
                 }}
                 style={{
-                visibility: (vis == -1 ? "hidden" : "visible")
+                    visibility: (vis === -1 ? "hidden" : "visible")
                 }}
-            ><PopupUser go={go}/></Popup>
-      </div>
+
+            ><PopupUser go={go}
+                        userName={`${userInfo.first_name} ${userInfo.second_name}`}
+                        avatar={userInfo.avatar} userUrl={userInfo.user_url}/>
+            </Popup>
+        </div>
     )
 };
 
