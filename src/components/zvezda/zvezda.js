@@ -33,16 +33,16 @@ const Zvezda = ({autor, otv, mark, answerId}) => {
     const [popout, setPopout] = useState(null);
 
     const updateStars = e => {
-        doMark()
+        doMark(e.currentTarget.dataset.count)
         setBlackStars(e.currentTarget.dataset.count)
         setWhiteStars(5 - e.currentTarget.dataset.count)
     }
 
-    async function doMark() {
+    async function doMark(mark) {
         setPopout(<ScreenSpinner size='large'/>)
         let userToken = JSON.parse(localStorage.getItem(USER_DATA_STORAGE_KEY));
-        await axios.get(`${BACKEND_URL}/answer/${answerId}/mark`,
-            {
+        await axios.put(`${BACKEND_URL}/question/answer/${answerId}/mark`,
+            {mark: mark}, {
                 headers: {
                     'Authorization': `Token ${userToken.token}`,
                     'Content-Type': 'application/json;charset=utf-8'

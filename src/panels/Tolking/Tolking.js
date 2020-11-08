@@ -76,9 +76,11 @@ const Tolking = ({ id, go, setQuestionId}) => {
 	return (<Panel id={id}>
 		<PanelHeader>EasyMeet</PanelHeader>
 		<SelectTool setPart={setPart}/>
+		<div className="aux">
 		{answerList.map((item) => (
 			<Answer head={item.text} ans={item.answers.length} but={<Button onClick={goToQuestionCard} data-to="vopros" data-question={item.id}>Перейти</Button>} go={go}/>
 		))}
+		</div>
 		<div className="ico">
 			<Icon28AddCircleOutline fill='#8a00ee' onClick={go} data-to="questions" width={50} height={50}/>
 		</div>
