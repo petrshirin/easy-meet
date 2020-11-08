@@ -83,7 +83,7 @@ const App = () => {
 			).then((resp) => {
 				if (resp.status === 201) {
 					if (resp.data.data.new) {
-						setActivePanel('registration')
+						setActivePanel('tutorial1')
 					}
 					dispatch(login(resp.data.data))
 					fetchData()

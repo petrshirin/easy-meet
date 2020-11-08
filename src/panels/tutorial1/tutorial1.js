@@ -31,15 +31,15 @@ const Tutorial1 = ({id, go}) => (
                 style = {{height: '100%'}}
                 bullets="dark">
                     <div>
-                      <img className = "ttt" src = {tut1}></img>
+                      <img className = "ttt" src = {tut1} alt="Welcome"/>
                       <div className = "bold"><text>Узнавай о мероприятиях и создавай свои</text></div>
                     </div>
                     <div>
-                      <img className = "ttt" src = {tut2}></img>
+                      <img className = "ttt" src = {tut2} alt="Welcome"/>
                       <div className = "bold"><text>Ищи новых друзей</text></div>
                     </div>
                     <div>
-                      <img className = "ttt" src = {tut3}></img>
+                      <img className = "ttt" src = {tut3} alt="Welcome"/>
                       <div className = "bold"><text>Задавай вопросы</text></div>
                       <div className = "bold"><text>отвечай на чужие</text></div>
                       <div className = "bold"><text>оценивай ответы</text></div>
