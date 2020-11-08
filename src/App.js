@@ -114,6 +114,8 @@ const App = () => {
 				<Event id='event' go={go} eventId={eventId}/>
 				<CreateEvent id='createEvent' go={go} />
 				<Tutorial1 id='tutorial1' fetchedUser={fetchedUser} go={go} />
+				<MapMeet id='map'go={go}/>
+				<MapProfile id='mapProfile' go={go} fetchedUser={fetchedUser}/>
 			</View>
 			<ToolBar activeWin={activePanel} go={go}/>
 
