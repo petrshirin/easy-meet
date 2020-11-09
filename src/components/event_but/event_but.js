@@ -7,8 +7,7 @@ import {BACKEND_URL} from "../../requests";
 import axios from 'axios';
 
 const ButEvent = ({urState, link_to, setIsMember, eventId}) => {
-    console.log(urState)
-    const [action, setAction] = useState(!urState ? 'subscribe' : "unsubscribe")
+    const [action, setAction] = useState(urState ? 'subscribe' : "unsubscribe")
 
     const doAction = e => {
         sendAction()
@@ -17,9 +16,12 @@ const ButEvent = ({urState, link_to, setIsMember, eventId}) => {
 
 
     async function sendAction() {
+
+        let action_to_send = !urState ? 'subscribe' : "unsubscribe"
+        console.log(action_to_send)
         let userToken = JSON.parse(localStorage.getItem(USER_DATA_STORAGE_KEY));
         let data = {
-            action: action
+            action: action_to_send
         }
         await axios.put(`${BACKEND_URL}/meeting/${eventId}/action`,
             data, {
@@ -29,7 +31,7 @@ const ButEvent = ({urState, link_to, setIsMember, eventId}) => {
                 }
             }
         ).then((resp) => {
-            if (resp.status === 200) {
+            if (resp.status === 201) {
                 if (action === 'subscribe') {
                     setAction('unsubscribe')
                 }

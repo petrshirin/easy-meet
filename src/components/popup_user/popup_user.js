@@ -9,11 +9,10 @@ const PopupUser = ({ go, userInfo, setProfilerUser}) => {
     }
 
     return (
-        <SimpleCell>
+        <SimpleCell onClick={goToProfile}>
             <Avatar
-            onClick={goToProfile}
             data-to="mapProfile" src={userInfo.avatar}/>
-            <a onClick={goToProfile}>{`${userInfo.first_name} ${userInfo.second_name}`}</a>
+            {`${userInfo.first_name} ${userInfo.second_name}`}
         </SimpleCell>
     ) 
 };

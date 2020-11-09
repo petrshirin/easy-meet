@@ -120,7 +120,7 @@ const App = () => {
 				<CreateEvent id='createEvent' go={go} />
 				<Tutorial1 id='tutorial1' fetchedUser={fetchedUser} go={go} />
 				<MapMeet id='map' go={go} setActivePanel={setActivePanel} setProfilerUser={setProfilerUser}/>
-				<MapProfile id='mapProfile' go={go} fetchedUser={fetchedUser}/>
+				<MapProfile id='mapProfile' go={go} fetchedUser={profilerUser}/>
 			</View>
 			<ToolBar activeWin={activePanel} go={go}/>
 

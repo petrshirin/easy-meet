@@ -45,7 +45,7 @@ const Event = ({ id, go, eventId }) => {
 
     useEffect(() => {
         getInfoAboutEvent()
-    }, [])
+    }, [setIsMember])
 
     async function getInfoAboutEvent() {
         let userToken = JSON.parse(localStorage.getItem(USER_DATA_STORAGE_KEY));

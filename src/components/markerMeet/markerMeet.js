@@ -8,6 +8,7 @@ import PopupUser from '../../components/popup_user/popup_user'
 const MarkerMeet = ({go, userInfo, self, setProfilerUser}) => {
     const [vis, setVis] = useState(-1);
 
+    console.log(userInfo)
     const setVS = e => {
         setVis(e.currentTarget.dataset.vs);
     };

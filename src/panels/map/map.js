@@ -30,12 +30,20 @@ const MapMeet = ({id, go, setActivePanel, setProfilerUser}) => {
     });
     const [markers, setMarkers] = useState([
         {
-            "first_name": "Имя",
-            "second_name": "Фамилия",
-            "avatar": null,
-            "user_url": null,
-            "latitude": "55.750000000000",
-            "longitude": "37.570000000000"
+            "id": 9,
+            "first_name": "Петр",
+            "second_name": "Ширин",
+            "avatar": "https://sun4-16.userapi.com/impf/c851420/v851420053/fbe04/7GHWNgcRBWA.jpg?size=200x0&quality=96&crop=1,40,1197,1197&sign=89bc2d03c563da16f8170f746313d98b&ava=1",
+            "user_url": "https://vk.com/id140227524",
+            "interests": [
+                {
+                    "id": 2,
+                    "name": "Дизайн и творчество"
+                }
+            ],
+            "latitude": "55.030197143555",
+            "longitude": "82.920433044434",
+            "score": 5.0
         }
     ]);
 
@@ -44,7 +52,6 @@ const MapMeet = ({id, go, setActivePanel, setProfilerUser}) => {
         loadUserGeo()
         loadMarkerMeets()
     }, [])
-
     async function loadUserGeo() {
         const userGeo = await bridge.send("VKWebAppGetGeodata")
         console.log(userGeo)
@@ -56,7 +63,6 @@ const MapMeet = ({id, go, setActivePanel, setProfilerUser}) => {
             longitude: userGeo.long,
         }
         sendUserGeo(data)
-        console.log(data)
         setLat(data.latitude)
         setLon(data.longitude)
     }
@@ -89,6 +95,7 @@ const MapMeet = ({id, go, setActivePanel, setProfilerUser}) => {
         ).then((resp) => {
             if (resp.status === 200) {
                 setMarkers(resp.data.data)
+                console.log(resp.data.data)
             }
         });
     }

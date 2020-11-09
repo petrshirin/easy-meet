@@ -60,7 +60,7 @@ const Vopros = ({ id, go, questionId}) => {
         }
     )
     const [answer, SetAnswer] = useState("")
-    const [isUpdateQuestion, NeedUpdateQuestion] = useState(false)
+    const [isUpdateQuestion, NeedUpdateQuestion] = useState(0)
 
 
     useEffect(() => {
@@ -69,6 +69,9 @@ const Vopros = ({ id, go, questionId}) => {
 
     const doAnswer = e => {
         sendAnswer()
+        SetAnswer("")
+        NeedUpdateQuestion(isUpdateQuestion + 1)
+        document.getElementsByTagName('textarea')[0].value = ""
     }
 
 
@@ -102,7 +105,7 @@ const Vopros = ({ id, go, questionId}) => {
                 }
             }
         ).then((resp) => {
-            if (resp.status === 200) {
+            if (resp.status === 201) {
             }
         });
     }
